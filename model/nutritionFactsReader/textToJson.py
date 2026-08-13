@@ -17,7 +17,25 @@ def extractFacts(filepath):
             {
                 "role": "user",
                 "content": (
-                        "Extract the nutrition facts from the following text. "
+                        "Extract the nutrition facts in the following format"
+                        "{"
+                        "   calories: {put listed calories here}"
+                        "   servings: {put number of servings per container. assume 1 if none is listed}"
+                        "   total_fat: {put listed daily value percentage for total fat here}"
+                        "   saturated_fat: {put listed daily value percentage for saturated fat here}"
+                        "   trans_fat: {put listed daily value percentage for total fat here. assume 0 if none is listed}"
+                        "   cholesterol: {put listed daily value percentage for cholesterol here}"
+                        "   sodium: {put listed daily value percentage for sodium here}"
+                        "   total_carbohydrate: {put listed daily value percentage for total carbohydrate here}"
+                        "   dietary_fiber: {put listed daily value percentage for dietary fiber here}"
+                        "   total_sugars: {put listed daily value percentage for total sugars here}"
+                        "   protein: {put listed daily value percentage for protein here}"
+                        "   vitamin_d: {put listed daily value percentage for vitamin D here}"
+                        "   iron: {put listed daily value percentage for iron here}"
+                        "   calcium: {put listed daily value percentage for calcium here}"
+                        "   potassium: {put listed daily value percentage for total fat here}"
+                        "}"
+                        " from the following text. "
                         "Return ONLY valid JSON.\n\n"
                         + content
                 )
