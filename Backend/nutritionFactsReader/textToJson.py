@@ -68,7 +68,7 @@ def send_json_payload(payloadString):
     
     print("payload sent")
 
-
+'''
 while True:
     files = os.listdir("./extractedText/")
     
@@ -76,9 +76,11 @@ while True:
         print("reading file")
         extractFacts("./extractedText/" + files[0])
         print("file read")
+    else:
+        break
         
 
     time.sleep(1)
-    
+'''
     
 

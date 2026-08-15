@@ -61,9 +61,11 @@ def send_text_payload(text, inputFileName):
 
 model = kie_predictor(det_arch="db_resnet50", reco_arch="crnn_vgg16_bn", pretrained=True)
 
+'''
 directory = "./input/"
 for file_name in os.listdir(directory):
     file_path = os.path.join(directory, file_name)
     if os.path.isfile(file_path): # Check if it's a file
         print(f"Processing file: {file_path}")
         extract_text(model, file_path)
+'''
