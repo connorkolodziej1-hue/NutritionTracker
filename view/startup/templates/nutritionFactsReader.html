@@ -1,15 +1,37 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'nutritionFactsReader.css' %}">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+    <header>
+        {% if request.user.is_authenticated %}
+        <h1 class="logged">Welcome! {{ request.user.username }}</h1>
+        <form class="logged" action="/nutritionTracker/logout/" method="post">
+            {% csrf_token %}
+            <label class="logged" for="logoutButton">Logout:</label>
+            <input class="logged" id="logoutButton" type="submit">
+        </form>
+        {% else %}
+        <form class="login" action="/nutritionTracker/login/" method="post">
+            {% csrf_token %}
+            <p class="login">Enter username and password to login/register</p>
+            <label class="login" for="username">Username:</label>
+            <input class="login" type="text" id="username" name="username">
+            <label class="login" for="password">Password:</label>
+            <input class="login" type="password" id="password" name="password">
+            <input class="login" type="submit">
+        </form>
+        {% endif %}
+    </header>
     <h1>Nutrition facts reader prototype</h1>
-    <form action="/nutritionTracker/nutFactsResult/" method="post">
+    <form action="/nutritionTracker/nutFactsResult/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <label for="file">Select a file</label>
-        <input type="file" name="file">
+        <input type="file" id="file" name="file">
         <input type="submit" name="Submit">
     </form>
 </body>

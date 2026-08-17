@@ -13,3 +13,5 @@ class NutritionFacts(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
     file = models.FileField(upload_to=user_directory_path)
     output_json = models.FileField(upload_to=user_directory_path)
+
+    

@@ -1,0 +1,266 @@
+/* =========================
+   Global
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7f6;
+    color: #26332f;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+header {
+    min-height: 90px;
+    padding: 20px 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #dce5e1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+/* =========================
+   Login
+   ========================= */
+
+form.login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+p.login {
+    margin: 0 15px 0 0;
+    font-size: 14px;
+    color: #68756f;
+}
+
+label.login {
+    font-size: 14px;
+    font-weight: 600;
+    color: #35423d;
+}
+
+input.login[type="text"],
+input.login[type="password"] {
+    width: 130px;
+    padding: 9px 11px;
+
+    border: 1px solid #cbd6d1;
+    border-radius: 6px;
+
+    font-size: 14px;
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input.login[type="text"]:focus,
+input.login[type="password"]:focus {
+    border-color: #4d9b7a;
+    box-shadow: 0 0 0 3px rgba(77, 155, 122, 0.15);
+}
+
+input.login[type="submit"] {
+    padding: 9px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #3f8f6b;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s, transform 0.1s;
+}
+
+input.login[type="submit"]:hover {
+    background: #34795a;
+}
+
+input.login[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* =========================
+   Logged-in Header
+   ========================= */
+
+h1.logged {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #35423d;
+}
+
+form.logged {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+label.logged {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input#logoutButton {
+    padding: 8px 15px;
+
+    border: 1px solid #cbd6d1;
+    border-radius: 6px;
+
+    background: white;
+    color: #35423d;
+
+    cursor: pointer;
+
+    transition: background 0.2s, border-color 0.2s;
+}
+
+input#logoutButton:hover {
+    background: #f0f4f2;
+    border-color: #aebdb6;
+}
+
+/* =========================
+   Main Heading
+   ========================= */
+
+body > h1 {
+    margin: 80px auto 35px;
+    text-align: center;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    color: #263d34;
+}
+
+/* =========================
+   Nutrition Upload Form
+   ========================= */
+
+body > form:not(.login):not(.logged) {
+    width: 500px;
+    max-width: calc(100% - 40px);
+
+    margin: 0 auto;
+    padding: 40px;
+
+    background: white;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 25px rgba(38, 51, 47, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* File label */
+
+body > form:not(.login):not(.logged) label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #35423d;
+}
+
+/* File input */
+
+body > form:not(.login):not(.logged) input[type="file"] {
+    width: 100%;
+    padding: 12px;
+
+    border: 2px dashed #b8c9c1;
+    border-radius: 8px;
+
+    background: #f8faf9;
+
+    cursor: pointer;
+}
+
+body > form:not(.login):not(.logged) input[type="file"]:hover {
+    border-color: #4d9b7a;
+    background: #f2f8f5;
+}
+
+/* Submit button */
+
+body > form:not(.login):not(.logged) input[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #3f8f6b;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s, transform 0.1s;
+}
+
+body > form:not(.login):not(.logged) input[type="submit"]:hover {
+    background: #34795a;
+}
+
+body > form:not(.login):not(.logged) input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+    form.login {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    p.login {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 10px;
+    }
+
+    h1.logged {
+        text-align: center;
+    }
+
+    form.logged {
+        justify-content: center;
+    }
+
+    body > h1 {
+        margin-top: 50px;
+        font-size: 27px;
+    }
+}
